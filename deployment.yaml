@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: player-service          # The identity of your deployment object
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: player-service       # Tells the deployment to manage pods matching this label
+  template:
+    metadata:
+      labels:
+        app: player-service     # The label applied to the individual running pods
+    spec:
+      containers:
+        - name: player-service    # The name of the container running your application
+          # This tag is what your Jenkinsfile 'sed' command will dynamically swap
+          image: localhost:5001/playerService:latest
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
