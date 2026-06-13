@@ -16,7 +16,7 @@ spec:
       containers:
         - name: player-service    # The name of the container running your application
           # This tag is what your Jenkinsfile 'sed' command will dynamically swap
-          image: localhost:5001/playerservice:latest
+          image: localhost:5001/playerservice:8
           ports:
             - containerPort: 8080
           imagePullPolicy: Always
