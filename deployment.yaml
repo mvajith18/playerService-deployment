@@ -18,5 +18,5 @@ spec:
           # This tag is what your Jenkinsfile 'sed' command will dynamically swap
           image: localhost:5001/playerservice:latest
           ports:
-            - containerPort: 8080
+            - containerPort: 9292
           imagePullPolicy: Always
